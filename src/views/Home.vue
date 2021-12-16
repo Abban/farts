@@ -1,20 +1,17 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+        <logo/>
     </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue';
 import {getPosts} from "@/resources/Post";
+import Logo from "@/components/Logo.vue";
 
 export default defineComponent({
     name: 'Home',
-    components: {
-        HelloWorld,
-    },
+    components: {Logo},
     setup() {
         getPosts().then(posts => {
             console.log(posts);

@@ -1,10 +1,5 @@
-import GhostContentAPI, {PostOrPage, PostsOrPages} from '@tryghost/content-api';
-
-const api = new GhostContentAPI({
-    url: process.env.VUE_APP_API_URL,
-    key: process.env.VUE_APP_API_KEY,
-    version: "v3"
-});
+import {PostOrPage, PostsOrPages} from '@tryghost/content-api';
+import api from "@/resources/api";
 
 export function getPosts(limit: number = 10, page: number = 0): Promise<PostsOrPages> {
     return api.posts.browse({limit, page});
