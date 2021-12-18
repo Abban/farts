@@ -16,15 +16,32 @@ $success: $green;
 $warning: $yellow;
 $danger: $red;
 $dark: $black;
-$text: #4d4d4d;
+$text: #343434;
+$code: #1C1B19;
+
+$easing: cubic-bezier(0.815, 0.025, 0.260, 0.975);
 
 // GLOBAL
 $radius: 0;
+$tag-radius: 4px;
+
+// CODE
+$pre-background: $code;
+$pre-font-size: 16px;
 
 // FONTS
-$family-monospace: 'Ocra', monospace;
+$family-ocra: 'Ocra', monospace;
 $family-sans-serif: 'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+// CONTENT
+$content-heading-weight: 800;
+$content-heading-color: $black;
 
 // BUTTONS
 $button-padding-horizontal: 20px;
 $button-padding-vertical: 30px;
+
+// FOOTER
+$footer-background-color: $black;
+$footer-color: $white;
+$footer-padding: 0 24px;

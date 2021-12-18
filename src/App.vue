@@ -1,19 +1,26 @@
 <template>
     <Marquee/>
-    <div id="nav">
-        <router-link to="/">Home</router-link>
-        |
-        <router-link to="/about">About</router-link>
+    <Header/>
+    <div class="app-container">
+        <router-view v-slot="{ Component }">
+            <transition name="fade" mode="out-in" appear>
+                <component :is="Component" />
+            </transition>
+        </router-view>
     </div>
-    <router-view/>
+    <Footer/>
 </template>
-
-<style lang="scss">
-
-</style>
 <script>
 import Marquee from "@/components/Marquee";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 export default {
-    components: {Marquee}
+    components: {Header, Footer, Marquee}
 }
 </script>
+
+<style lang="scss">
+.app-container {
+    padding: 0 24px 26px;
+}
+</style>

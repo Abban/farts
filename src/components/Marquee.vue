@@ -17,7 +17,7 @@ export default {
     .marquee {
         background: $black;
         color: $white;
-        font-family: $family-monospace;
+        font-family: $family-ocra;
         font-size: 12px;
         padding: 3px 0 5px;
         text-transform: uppercase;

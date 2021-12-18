@@ -20,6 +20,10 @@ export default {
     display: flex;
     justify-content: center;
     line-height: 60px;
+    color: $black;
+    opacity: 0;
+    animation: showLogo 1s ease-in-out;
+    animation-fill-mode: forwards;
 
     @include from($desktop) {
         line-height: 80px;
@@ -43,6 +47,15 @@ export default {
             width: 80px;
             height: 80px;
         }
+    }
+}
+
+@keyframes showLogo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

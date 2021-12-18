@@ -2,9 +2,47 @@
 
 @import './fonts';
 @import './variables';
-
+@import './transitions';
+@import './nprogress';
+@import './code';
 @import '~bulma';
 
-body {
-  color: $black;
+#app {
+    a {
+        transition: color 500ms $easing, background 500ms $easing;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+
+    .columns:last-child {
+        margin-bottom: 0;
+    }
+
+    .content {
+        figure,
+        figure:not(:last-child),
+        figure:not(:first-child) {
+            margin: 0 0 1em;
+            text-align: left;
+        }
+
+        figcaption {
+            font-size: 14px;
+        }
+
+        figure pre {
+            margin-bottom: 0;
+        }
+    }
+
+    .buttons, .buttons:last-child {
+        margin-bottom: 60px
+    }
 }
