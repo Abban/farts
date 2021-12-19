@@ -8,12 +8,13 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, watch} from 'vue';
+import { defineComponent, onMounted, ref, watch } from 'vue';
 import {getPosts} from "@/resources/Post";
 import PostExcerpt from "@/components/PostExcerpt.vue";
 import Pagination from "@/components/Pagination.vue";
 import {PostsOrPages, Pagination as MetaPagination} from "@tryghost/content-api";
 import {useRoute} from "vue-router";
+import highlight from '@/plugins/highlightjs';
 
 export default defineComponent({
     name: 'Home',
@@ -40,6 +41,10 @@ export default defineComponent({
 
         watch(() => route.params.page, () => loadPage(true));
         loadPage();
+
+		onMounted(() => {
+			highlight();
+		});
 
         return {
             posts,

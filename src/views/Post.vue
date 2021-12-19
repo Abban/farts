@@ -14,16 +14,16 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted, ref} from "vue";
-import {PostOrPage} from "@tryghost/content-api";
-import {getPost} from "@/resources/Post.ts";
-import {useRoute} from "vue-router";
-import Meta from "@/components/snippets/Meta.vue";
-import Tags from "@/components/snippets/Tags.vue";
-import hljs from 'highlight.js';
+import {defineComponent, onMounted, ref} from 'vue';
+import {PostOrPage} from '@tryghost/content-api';
+import {getPost} from '@/resources/Post.ts';
+import {useRoute} from 'vue-router';
+import Meta from '@/components/snippets/Meta.vue';
+import Tags from '@/components/snippets/Tags.vue';
+import highlight from '@/plugins/highlightjs';
 
 export default defineComponent({
-    name: "Post",
+    name: 'Post',
     components: {Meta, Tags},
     setup() {
         const route = useRoute();
@@ -32,11 +32,11 @@ export default defineComponent({
             post.value = response;
         });
         onMounted(() => {
-            setTimeout( hljs.highlightAll, 1000)
+            highlight();
         });
-       return {
-           post
-       };
+        return {
+            post
+        };
     }
 });
 </script>
@@ -49,6 +49,7 @@ export default defineComponent({
         margin-bottom: 60px;
         max-width: 720px;
     }
+
     &-title {
         text-transform: uppercase;
         font-weight: 800;
@@ -59,6 +60,7 @@ export default defineComponent({
         animation-fill-mode: forwards;
         animation-delay: 100ms;
     }
+
     .post-meta {
         opacity: 0;
         transform: translateY(60px);
@@ -66,6 +68,7 @@ export default defineComponent({
         animation-fill-mode: forwards;
         animation-delay: 200ms;
     }
+
     .post-tags {
         opacity: 0;
         transform: translateY(60px);
@@ -73,6 +76,7 @@ export default defineComponent({
         animation-fill-mode: forwards;
         animation-delay: 300ms;
     }
+
     &-body {
         font-size: 20px;
         text-align: left;
@@ -92,15 +96,16 @@ export default defineComponent({
 }
 
 @keyframes showPost {
-     0% {
-         transform: translateY(60px);
-         opacity: 0;
-     }
-     100% {
-         transform: translateY(0);
-         opacity: 1;
-     }
- }
+    0% {
+        transform: translateY(60px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @keyframes hidePost {
     0% {
         transform: translateY(0);
