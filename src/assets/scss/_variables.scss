@@ -17,7 +17,7 @@ $warning: $yellow;
 $danger: $red;
 $dark: $black;
 $text: #343434;
-$code: #1C1B19;
+$code-bg: #1C1B19;
 
 $easing: cubic-bezier(0.815, 0.025, 0.260, 0.975);
 
@@ -26,9 +26,10 @@ $radius: 0;
 $tag-radius: 4px;
 
 // CODE
-$pre-background: $code;
+$pre-background: $code-bg;
 $pre-font-size: 16px;
 $pre: $white;
+$code-background: $code-bg;
 $code: $white;
 
 // FONTS

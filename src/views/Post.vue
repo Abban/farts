@@ -78,7 +78,6 @@ export default defineComponent({
     }
 
     &-body {
-        font-size: 20px;
         text-align: left;
 
         opacity: 0;
@@ -86,6 +85,10 @@ export default defineComponent({
         animation: showPost 1s ease-in-out;
         animation-fill-mode: forwards;
         animation-delay: 400ms;
+
+        p {
+            font-size: 20px;
+        }
     }
 }
 
