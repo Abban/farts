@@ -1,11 +1,11 @@
 <template>
     <div class="post container" v-if="post">
         <div class="columns is-centered">
-            <div class="post-content content micro-blog">
+            <div class="post-content content">
                 <h1 class="post-title">
                     {{ post.title }}
                 </h1>
-                <Meta :date="post.created_at" :reading-time="post.reading_time"/>
+                <Meta :date="post.published_at" :reading-time="post.reading_time"/>
                 <tags :tags="post.tags"/>
                 <div class="post-body" v-html="post.html"></div>
             </div>
@@ -86,7 +86,7 @@ export default defineComponent({
         animation-fill-mode: forwards;
         animation-delay: 400ms;
 
-        p {
+        p, li {
             font-size: 20px;
         }
     }

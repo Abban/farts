@@ -3,7 +3,7 @@
         <h2 class="post-excerpt-title">
             {{ post.title }}
         </h2>
-        <Meta :date="post.created_at"/>
+        <Meta :date="post.published_at"/>
         <p class="post-excerpt-content" v-html="post.html"></p>
         <tags :tags="post.tags"/>
     </div>

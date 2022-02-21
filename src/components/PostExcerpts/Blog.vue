@@ -3,7 +3,7 @@
         <h2 class="post-excerpt-title">
             <router-link :to="{ name: 'Post', params: { slug: post.slug } }">{{ post.title }}</router-link>
         </h2>
-        <Meta :date="post.created_at" :reading-time="post.reading_time"/>
+        <Meta :date="post.published_at" :reading-time="post.reading_time"/>
         <p class="post-excerpt-content">
             {{ post.custom_excerpt }}
         </p>
