@@ -64,7 +64,6 @@ export default defineComponent({
 
     &-content {
         font-size: 18px;
-        text-align: justify;
     }
 }
 
@@ -84,6 +83,7 @@ export default defineComponent({
         opacity: 1;
     }
 }
+
 @keyframes hidePosts {
     0% {
         transform: translateX(0);
